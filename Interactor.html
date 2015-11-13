@@ -1,0 +1,15 @@
+<head>
+  <title>Interactor</title>
+</head>
+
+<body>
+  <h1>Welcome to Swisscom Interactor!</h1>
+  {{> apikey}}
+  {{key}}
+</body>
+
+<template name="apikey">
+  <form class="api_key_input_field">
+	<input type="text" name="key" placeholder="Enter your Interactor API key" size="100" id="apikey" autofocus required>
+  </form>
+</template>
