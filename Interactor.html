@@ -4,12 +4,22 @@
 
 <body>
   <h1>Welcome to Swisscom Interactor!</h1>
-  {{> apikey}}
-  {{key}}
+
+    <ul>
+      {{#each keys}}
+        {{> key}}
+      {{/each}}
+    </ul>
+
+  {{> apikeyInput}}
 </body>
 
-<template name="apikey">
+<template name="apikeyInput">
   <form class="api_key_input_field">
 	<input type="text" name="key" placeholder="Enter your Interactor API key" size="100" id="apikey" autofocus required>
   </form>
+</template>
+
+<template name="key">
+ <li> {{key}} </li>
 </template>

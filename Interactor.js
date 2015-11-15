@@ -1,14 +1,12 @@
 // create new collection for API key
-Key = new Mongo.Collection("apikey");
+Keys = new Mongo.Collection("apikey");
 
 // Client only code goes here
 if (Meteor.isClient) {
-  // Clear apiKey 
-  Session.setDefault('apiKey', "");
 
   Template.body.helpers({
-    key: function () {
-	return Session.get("apiKey");
+    keys: function () {
+	return Keys.find({}, {sort: {createdAt: -1}});
     }
   });
 
@@ -21,13 +19,10 @@ if (Meteor.isClient) {
       var apikey = event.target.key.value;
 
       // store API in collection
-      Key.insert({
-	key: apikey
+      Keys.insert({
+	key: apikey,
+	createdAt: new Date() 
 	});
-
-      // store API key in session value for
-      // client use only
-      Session.set("apiKey", apikey);
 
       // Clear form
       event.target.key.value = "";
