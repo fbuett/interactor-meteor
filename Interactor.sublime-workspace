@@ -1,0 +1,277 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dat",
+				"dataListJson"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"t",
+				"target"
+			],
+			[
+				"api",
+				"apicall"
+			],
+			[
+				"r",
+				"r"
+			],
+			[
+				"beacon",
+				"beaconList"
+			],
+			[
+				"s",
+				"setDefault"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"Se",
+				"Session"
+			],
+			[
+				"se",
+				"Session"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"Accou",
+				"currentAccount"
+			],
+			[
+				"get",
+				"getPublic"
+			],
+			[
+				"A",
+				"Account"
+			],
+			[
+				"app",
+				"appEnv"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/frank/Dropbox/Development/Meteor/Interactor/Interactor.html",
+		"/Users/frank/Dropbox/Development/Meteor/Interactor/Interactor.js",
+		"/Users/frank/Dropbox/Development/Meteor/Interactor/Interactor.css",
+		"/Users/frank/Dropbox/Development/BlueMix/iot-interact/application/app.js",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/server/boot/account.js",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/common/models/account.json",
+		"/Users/frank/Development/findMyStuff/findMyStuff.js",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/client/js/app.js",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/client/js/controllers/account.js",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/client/js/services/auth.js",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/client/js/services/account.js",
+		"/Users/frank/Dropbox/Development/Strongloop/loopback-getting-started-intermediate/client/index.html",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/client/login.html",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/client/index.html",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/client/views/account-details.html",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/common/models/zone.json",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/common/models/sensor.json",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/common/models/zone-event.json",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/common/models/sensor-event.json",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/common/models/zone.js",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/server/boot/admin.js",
+		"/Users/frank/Dropbox/Development/Strongloop/loopback-getting-started-intermediate/client/js/app.js",
+		"/Users/frank/Dropbox/Development/Strongloop/interactor/server/model-config.json",
+		"/Users/frank/Dropbox/Programming/strongloop/loopback-getting-started-intermediate/client/css/style.css",
+		"/Users/frank/Dropbox/Programming/strongloop/loopback-getting-started-intermediate/client/js/app.js",
+		"/Users/frank/Dropbox/Programming/index.html",
+		"/Users/frank/Dropbox/Programming/strongloop/loopback-getting-started-intermediate/client/index.html",
+		"/Users/frank/Dropbox/Programming/strongloop/loopback-getting-started-intermediate/client/js/services/lb-services.js",
+		"/Users/frank/Dropbox/Programming/strongloop/loopback-getting-started-intermediate/client/js/services/auth.js",
+		"/Users/frank/Dropbox/Programming/strongloop/loopback-getting-started-intermediate/client/js/controllers/review.js",
+		"/Users/frank/Dropbox/Programming/strongloop/loopback-getting-started-intermediate/client/js/controllers/auth.js",
+		"/Users/frank/Dropbox/Programming/strongloop/loopback-getting-started-intermediate/client/README.md",
+		"/Users/frank/Dropbox/Programming/strongloop/interactor/server/datasources.json",
+		"/Users/frank/Dropbox/Programming/Strongloop/interactor/server/model-config.json",
+		"/Users/frank/Dropbox/Programming/strongloop/interactor/server/datasources.js",
+		"/Users/frank/Dropbox/Programming/strongloop/interactor/server/server.js",
+		"/Users/frank/Dropbox/Programming/strongloop/interactor/server/datasources.local.js",
+		"/Users/frank/Dropbox/Programming/strongloop/interactor/server/config.json",
+		"/Users/frank/Dropbox/Programming/BlueMix/iot-interact/application/app.js",
+		"/Users/frank/Dropbox/Programming/BlueMix/iot-interact/application/app1.js",
+		"/Users/frank/Dropbox/Programming/BlueMix/iot-interact/application/public/stylesheets/style.css",
+		"/Users/frank/Dropbox/Programming/BlueMix/iot-interact/application/public/index.html",
+		"/Users/frank/Downloads/iot-interact-application/app.js"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\"postgreSQL\"",
+			"\"postgreSQL\"\n",
+			">\n",
+			"\"db\""
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\"db\"",
+			"\"postgreSQL\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 163.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 207.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

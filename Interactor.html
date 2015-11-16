@@ -4,14 +4,36 @@
 
 <body>
   <h1>Welcome to Swisscom Interactor!</h1>
-
-    <ul>
-      {{#each keys}}
-        {{> key}}
-      {{/each}}
-    </ul>
-
   {{> apikeyInput}}
+
+  {{#if isApiKeySet}}
+  	<p>API Key set to {{isApiKeySet}}</p>
+  	{{> getInteractorData}}
+  {{/if}}
+
+  {{#if isWaiting}}
+  	{{> spinner}}
+  {{/if}}
+
+  {{#if isDataList}}
+  	<!-- {{isDataList}} -->
+  	
+  	<table  border="1" style="width:100%">
+  		<tr>
+  			{{#each tableHeader}}
+  				<th>{{this}}</th>
+  			{{/each}}
+  		</tr>
+  		{{#each tableRows}}
+  			<tr>
+  			{{#each this}}
+  				<td>{{this}}</td>
+  			{{/each}}
+  			</tr>
+  		{{/each}}
+  	</table>
+  	
+  {{/if}}
 </body>
 
 <template name="apikeyInput">
@@ -20,6 +42,13 @@
   </form>
 </template>
 
-<template name="key">
- <li> {{key}} </li>
+<template name="getInteractorData">	
+  <div>
+  	<button type="submit" name="beacons" class="getButtons">Get Beacons</button>
+  	<button type="button" name="zones" class="getButtons">Get Zones</button>
+  	<button type="button" name="locations" class="getButtons">Get Locations</button>
+  	<button type="button" name="event-definitions" class="getButtons">Get Events</button>
+  </div>
 </template>
+
+
