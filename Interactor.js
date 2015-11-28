@@ -100,7 +100,28 @@ if (Meteor.isServer) {
     // console.log("Interactor response:" , response);
 
     return response;
-    }
+    },
+
+  // listen to events
+  'getEvents': function (apikey, apicall) {
+
+    // Construct the API URL
+    var apiUrl = 'https://interactor.swisscom.ch/api/'+apicall;
+
+    console.log(apiUrl);
+
+    // query the API
+    var response = HTTP.get(apiUrl, {
+        headers: {
+           // "x-interact-api-key": "aa6e4237-79d0-4d62-93d7-30854b089b4a" 
+           "x-interact-api-key": apikey
+        }
+    }).data;
+    
+    // console.log("Interactor response:" , response);
+
+    return response;
+    }    
   });
 
 }

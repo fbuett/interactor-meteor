@@ -3,52 +3,87 @@
 </head>
 
 <body>
-  <h1>Welcome to Swisscom Interactor!</h1>
-  {{> apikeyInput}}
 
-  {{#if isApiKeySet}}
-  	<p>API Key set to {{isApiKeySet}}</p>
-  	{{> getInteractorData}}
-  {{/if}}
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Swisscom Interactor</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Config</a></li>
+          <li><a href="#">Events</a></li> 
+          <li><a href="#">About</a></li> 
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  {{#if isWaiting}}
-  	{{> spinner}}
-  {{/if}}
+  <main>
+    {{> apikeyInput}}
 
-  {{#if isDataList}}
-  	<!-- {{isDataList}} -->
-  	
-  	<table  border="1" style="width:100%">
-  		<tr>
-  			{{#each tableHeader}}
-  				<th>{{this}}</th>
-  			{{/each}}
-  		</tr>
-  		{{#each tableRows}}
-  			<tr>
-  			{{#each this}}
-  				<td>{{this}}</td>
-  			{{/each}}
-  			</tr>
-  		{{/each}}
-  	</table>
-  	
-  {{/if}}
+    {{#if isApiKeySet}}
+    	<p>API Key set to {{isApiKeySet}}</p>
+      {{> getData}}
+      {{> getEvents}}
+    {{/if}}
+
+    {{#if isWaiting}}
+    	{{> spinner}}
+    {{/if}}
+
+    <section>
+    {{#if isDataList}}
+    	<!-- {{isDataList}} -->
+    	
+    	<table  border="1" style="width:100%">
+    		<tr>
+    			{{#each tableHeader}}
+    				<th>{{this}}</th>
+    			{{/each}}
+    		</tr>
+    		{{#each tableRows}}
+    			<tr>
+    			{{#each this}}
+    				<td>{{this}}</td>
+    			{{/each}}
+    			</tr>
+    		{{/each}}
+    	</table>
+    	
+    {{/if}}
+    </section>
+  </main>
+
 </body>
 
 <template name="apikeyInput">
   <form class="api_key_input_field">
 	<input type="text" name="key" placeholder="Enter your Interactor API key" size="100" id="apikey" autofocus required>
   </form>
-</template>
+</template> 
 
-<template name="getInteractorData">	
-  <div>
-  	<button type="submit" name="beacons" class="getButtons">Get Beacons</button>
-  	<button type="button" name="zones" class="getButtons">Get Zones</button>
-  	<button type="button" name="locations" class="getButtons">Get Locations</button>
-  	<button type="button" name="event-definitions" class="getButtons">Get Events</button>
+<template name="getData">
+  <div class="btn-group">
+    <!-- name=API URL extension -->
+    <button type="button" name="beacons" class="btn btn-default getButtons">Get Beacons</button>
+    <button type="button" name="zones" class="btn btn-default getButtons">Get Zones</button>
+    <button type="button" name="locations" class="btn btn-default getButtons">Get Locations</button>
+    <button type="button" name="event-definitions" class="btn btn-default getButtons">Get Events</button>   
   </div>
 </template>
 
-
+<template name="getEvents">
+  <div class="btn-group btn-toggle" data-toggle="buttons">
+    <label class="btn btn-default active">
+      <input type="radio" name="options" value="option1"> Off
+    </label>
+    <label class="btn btn-default">
+      <input type="radio" name="options" value="option2" checked=""> Beacon Event
+    </label>
+    <label class="btn btn-default">
+      <input type="radio" name="options" value="option2" checked=""> Zone Events
+    </label>
+  </div>
+</template>
