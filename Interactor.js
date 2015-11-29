@@ -1,8 +1,5 @@
 
 
-// create collection 
-Beacons = new Mongo.Collection("beacons");
-
 // Client only code goes here
 if (Meteor.isClient) {
   
@@ -11,6 +8,7 @@ if (Meteor.isClient) {
   Session.setDefault("dataListString", false);
   Session.setDefault("dataListJson", false);
   Session.setDefault("waiting", false);
+  Session.setDefault("logState", "off");
 
   Template.body.helpers({
     isApiKeySet: function () {
@@ -59,6 +57,7 @@ if (Meteor.isClient) {
       event.target.key.value = "";
     },
 
+    // click button events
     "click .getButtons": function (event) {
       event.preventDefault();
       Session.set("waiting", true);
@@ -69,7 +68,16 @@ if (Meteor.isClient) {
         Session.set("dataListJson", res);
         Session.set("waiting", false);
       })
-    }     
+    },
+    
+    // toogle events
+    "change .getToggle": function (event) {
+      event.preventDefault();
+
+      // call method on server to get data from external API
+      Meteor.call('getEvents', Session.get("apikey"), event.target.value, function(err,res){
+      })
+    }         
   })
 }
 
@@ -79,49 +87,33 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 
+  // Meteor methods go here....
   Meteor.methods({
 
-  // get Beacons
-  'getData': function (apikey, apicall) {
+    // get configuration data
+    'getData': function (apikey, apicall) {
 
-    // Construct the API URL
-    var apiUrl = 'https://interactor.swisscom.ch/api/'+apicall;
+      // Construct the API URL
+      var apiUrl = 'https://interactor.swisscom.ch/api/'+apicall;
 
-    console.log(apiUrl);
+      console.log(apiUrl);
 
-    // query the API
-    var response = HTTP.get(apiUrl, {
-        headers: {
-           // "x-interact-api-key": "aa6e4237-79d0-4d62-93d7-30854b089b4a" 
-           "x-interact-api-key": apikey
-        }
-    }).data;
-    
-    // console.log("Interactor response:" , response);
+      // query the API
+      var response = HTTP.get(apiUrl, {
+          // set API key in header
+          headers: {
+             "x-interact-api-key": apikey
+          }
+      }).data;
+      
+      return response;
+      },
 
-    return response;
-    },
-
-  // listen to events
-  'getEvents': function (apikey, apicall) {
-
-    // Construct the API URL
-    var apiUrl = 'https://interactor.swisscom.ch/api/'+apicall;
-
-    console.log(apiUrl);
-
-    // query the API
-    var response = HTTP.get(apiUrl, {
-        headers: {
-           // "x-interact-api-key": "aa6e4237-79d0-4d62-93d7-30854b089b4a" 
-           "x-interact-api-key": apikey
-        }
-    }).data;
-    
-    // console.log("Interactor response:" , response);
-
-    return response;
-    }    
+    // listen to events
+    'getEvents': function (apikey, events) {
+      console.log("listen to "+events);
+      return ;
+      }    
   });
 
 }

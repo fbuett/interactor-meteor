@@ -16,13 +16,14 @@
           <li><a href="#">Events</a></li> 
           <li><a href="#">About</a></li> 
         </ul>
+        <div class="navbar-form navbar-right">
+          {{> apikeyInput}}
+        </div>
       </div>
     </div>
   </nav>
 
   <main>
-    {{> apikeyInput}}
-
     {{#if isApiKeySet}}
     	<p>API Key set to {{isApiKeySet}}</p>
       {{> getData}}
@@ -35,22 +36,24 @@
 
     <section>
     {{#if isDataList}}
-    	<!-- {{isDataList}} -->
-    	
-    	<table  border="1" style="width:100%">
-    		<tr>
-    			{{#each tableHeader}}
-    				<th>{{this}}</th>
-    			{{/each}}
-    		</tr>
-    		{{#each tableRows}}
-    			<tr>
-    			{{#each this}}
-    				<td>{{this}}</td>
-    			{{/each}}
-    			</tr>
-    		{{/each}}
-    	</table>
+    	<table  class="table table-striped table-bordered table-hover" style="width:100%">
+        <thead>
+      		<tr>
+      			{{#each tableHeader}}
+      				<th>{{this}}</th>
+      			{{/each}}
+      		</tr>
+        </thead>
+        <tbody>
+      		{{#each tableRows}}
+      			<tr>
+      			{{#each this}}
+      				<td>{{this}}</td>
+      			{{/each}}
+      			</tr>
+      		{{/each}}
+    	   </tbody>
+      </table>
     	
     {{/if}}
     </section>
@@ -59,8 +62,10 @@
 </body>
 
 <template name="apikeyInput">
-  <form class="api_key_input_field">
-	<input type="text" name="key" placeholder="Enter your Interactor API key" size="100" id="apikey" autofocus required>
+  <form class="api_key_input_field" role="form">
+    <div class="form-group col-xs-3">
+    	<input type="text" name="key" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxx" class="form-control" id="apikey" autofocus required>
+    </div>
   </form>
 </template> 
 
@@ -76,14 +81,14 @@
 
 <template name="getEvents">
   <div class="btn-group btn-toggle" data-toggle="buttons">
-    <label class="btn btn-default active">
-      <input type="radio" name="options" value="option1"> Off
+    <label class="btn btn-default active getToggle">
+      <input type="radio" name="options" value="off"> Off
     </label>
-    <label class="btn btn-default">
-      <input type="radio" name="options" value="option2" checked=""> Beacon Event
+    <label class="btn btn-default getToggle">
+      <input type="radio" name="options" value="beacon" checked=""> Beacon Event
     </label>
-    <label class="btn btn-default">
-      <input type="radio" name="options" value="option2" checked=""> Zone Events
+    <label class="btn btn-default getToggle">
+      <input type="radio" name="options" value="zone" checked=""> Zone Events
     </label>
   </div>
 </template>
